@@ -1,6 +1,9 @@
-package org.example.solution;
+package org.example.solution.probability_counters.implemented;
 
 import org.apache.commons.math3.fraction.Fraction;
+import org.example.solution.probability_counters.abstact.ChessFractionProbabilityCounter;
+import org.example.solution.probability_counters.ChessmanPosition;
+import org.example.solution.probability_counters.MovesProvider;
 
 import java.util.stream.Stream;
 

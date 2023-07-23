@@ -1,4 +1,4 @@
-package org.example.solution;
+package org.example.solution.probability_counters.abstact;
 
 import org.apache.commons.math3.fraction.Fraction;
 
