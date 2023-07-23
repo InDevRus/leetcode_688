@@ -1,4 +1,4 @@
-package org.example;
+package org.example.solution;
 
 import java.util.List;
 import java.util.Map;
@@ -106,8 +106,7 @@ class KnightDoubleProbabilityCounter extends ChessDoubleProbabilityCounter {
         super(boardSize);
     }
 
-    @Override
-    protected Stream<ChessmanPosition> provideMoves(ChessmanPosition currentPosition) {
+    static Stream<ChessmanPosition> knightMoves(ChessmanPosition currentPosition) {
         return Stream.of(-2, -1, 1, 2).flatMap(horizontalDifference -> {
             var verticalDifferenceAbsolute = Math.abs(horizontalDifference) == 1 ? 2 : 1;
             return Stream.of(verticalDifferenceAbsolute, -verticalDifferenceAbsolute)
@@ -115,6 +114,11 @@ class KnightDoubleProbabilityCounter extends ChessDoubleProbabilityCounter {
                             currentPosition.row() + horizontalDifference,
                             currentPosition.column() + verticalDifference));
         });
+    }
+
+    @Override
+    protected Stream<ChessmanPosition> provideMoves(ChessmanPosition currentPosition) {
+        return knightMoves(currentPosition);
     }
 
     @Override
